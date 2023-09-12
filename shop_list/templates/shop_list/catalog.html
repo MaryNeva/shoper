@@ -1,0 +1,17 @@
+
+{% extends 'shop_list/base.html' %}
+
+
+{% block title %} Catalog! {% endblock %}
+
+{% block content %}
+    <h2> Catalog </h2>
+    <ul>
+        {% for section in sections %}
+        <li>
+          <a href="{{slug_section}}/{{ catalog_section.get_section_url }}">{{ section }}</a>
+         </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

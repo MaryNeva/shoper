@@ -3,7 +3,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.main_page),
-    path('<product>', views.get_product, name='main_name'),
+    path('', views.show_section, name='section-detail'),
+    #path('<slug:slug_section>', views.show_section, name='section-detail'),
+    path('<slug:slug_product>', views.show_product, name='product-detail'),
+
 
 ]

@@ -20,6 +20,7 @@ from shop_list import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', include('shop_list.urls')),
+    path('', views.show_catalog),
+    path('<slug:slug_section>/', include('shop_list.urls')),
 
 ]

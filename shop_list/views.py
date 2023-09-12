@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
-
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from .models import Product, Catalog_section
+from django.urls import reverse
+from django.template.loader import render_to_string
 # Create your views here.
 
 products_dict = {
@@ -39,13 +41,19 @@ products_dict = {
 }
 
 
-def main_page(request):
-    return HttpResponse("Your shop list")
+def show_catalog(request):
+    sections = Catalog_section.objects.order_by('name_section')
+    return render(request, 'shop_list/catalog.html', context={'sections': sections})
+
+def show_section(request, slug_section: str):
+    section = slug_section
+    products = Product.objects.all()
+    return render(request, 'shop_list/section.html', context={'products': products})
 
 
-def get_product(request, product):
-    description = products_dict.get(product.title(), None)
-    if description:
-        return HttpResponse(description)
-    else:
-        return HttpResponseNotFound(f"Page not found")
+def show_product(request, slug_product:str, slug_section: str):
+    name_product = slug_product
+
+   # redirect_url = reverse('product-detail', args=[name_product])
+    return render(request, 'shop_list/product.html', context={'name_product': name_product})
+    #return HttpResponseRedirect(redirect_url)
