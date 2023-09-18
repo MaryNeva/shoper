@@ -47,4 +47,4 @@ class Product(models.Model):
         super(Product, self).save(*args, **kwargs)
 
     def get_products_url(self):
-        return reverse('product-detail', args=[self.slug, Catalog_section.slug])
+        return reverse('section-detail/product-detail', args=[self.slug, Catalog_section.slug])

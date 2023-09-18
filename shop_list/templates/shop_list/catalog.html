@@ -9,7 +9,7 @@
     <ul>
         {% for section in sections %}
         <li>
-          <a href="{{slug_section}}/{{ catalog_section.get_section_url }}">{{ section }}</a>
+          <a href="{{ section.slug }}/{{ catalog_section.get_section_url }}">{{ section }}</a>
          </li>
         {% endfor %}
     </ul>

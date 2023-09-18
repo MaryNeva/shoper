@@ -46,14 +46,13 @@ def show_catalog(request):
     return render(request, 'shop_list/catalog.html', context={'sections': sections})
 
 def show_section(request, slug_section: str):
-    section = slug_section
-    products = Product.objects.all()
-    return render(request, 'shop_list/section.html', context={'products': products})
+    section = get_object_or_404(Catalog_section, slug=slug_section)
+    products = Product.objects.filter(section=section)
+    return render(request, 'shop_list/section.html', context={'products': products, 'section': section})
+
 
 
 def show_product(request, slug_product:str, slug_section: str):
-    name_product = slug_product
-
-   # redirect_url = reverse('product-detail', args=[name_product])
-    return render(request, 'shop_list/product.html', context={'name_product': name_product})
-    #return HttpResponseRedirect(redirect_url)
+    name = get_object_or_404(Product, slug=slug_product)
+    objects = Product.objects.filter(name=name)
+    return render(request, 'shop_list/product.html', context={'objects': objects})
