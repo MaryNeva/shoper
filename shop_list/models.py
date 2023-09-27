@@ -1,12 +1,14 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+
 # Create your models here.
 
 
 class Catalog_section(models.Model):
     name_section = models.CharField(max_length=50)
     slug = models.SlugField(default='', null=False, db_index=True)
+    name_ru = models.CharField(max_length=50, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name_section)
@@ -20,6 +22,7 @@ class Catalog_section(models.Model):
 
 class Units(models.Model):
     name_unit = models.CharField(max_length=50)
+    name_ru = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return f'{self.name_unit}'
@@ -38,6 +41,7 @@ class Product(models.Model):
     comment = models.CharField(max_length=200, null=True, blank=True)
     section = models.ForeignKey(Catalog_section, on_delete=models.SET_NULL, null=True )
     slug = models.SlugField(default='', null=False)
+    name_ru = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return f'{self.name}'
@@ -48,3 +52,8 @@ class Product(models.Model):
 
     def get_products_url(self):
         return reverse('section-detail/product-detail', args=[self.slug, Catalog_section.slug])
+
+
+
+
+

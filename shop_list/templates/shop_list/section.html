@@ -1,15 +1,18 @@
-
 {% extends 'shop_list/base.html' %}
-
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop_list/css/section.css' %}">
+{% endblock %}
 
 {% block title %} {{ section }} {% endblock %}
 
 {% block content %}
-<h2> {{section}} </h2>
-    <ul>
+<h1> {{section|upper}} </h1>
+    <ul class="section">
         {% for product in products %}
         <li>
-          <a href="{{ product.slug }}/{{ product.get_product_url }}">{{ product }}</a>
+             <a href="{{ product.slug }}/{{ product.get_product_url }}">{{ product }}</a>
+
          </li>
         {% endfor %}
     </ul>

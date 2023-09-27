@@ -1,0 +1,119 @@
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section {
+    outline-width: 2px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 1;
+    list-style-type: none;
+    width: 80%;
+    max-width: 80%;
+    border-radius: 10px;
+   /* margin: 2% auto 2%; */
+    padding: 1px;
+    min-height: 90%;
+}
+
+.section li {
+    background-color: #e0dcda;
+    border: 4px double #666463;
+    outline-width: 4px;
+    text-align: center;
+    width: 100%;
+    font-size: 100%;
+    padding: 1.5rem 0rem;
+    border-radius: 10px;
+    opacity: 0.7;
+    filter: alpha(Opacity=70);
+    font-family: 'Outfit', sans-serif;
+    color: #000000;
+}
+
+.section li:hover  {
+    border: 3px solid #f26522;
+    opacity: 1;
+    transform: scale(0.9);
+    }
+
+
+.section li a {
+    color: #000000;
+    text-decoration: none;
+    }
+
+
+
+/* форма */
+
+form: {
+
+    width: 50%;
+    margin: 20px auto;
+    max-width: 50%;
+    padding: 1rem;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 2px 8px #41644A;
+}
+
+button {
+    cursor: pointer;
+    background-color: #41644A;
+    color: white;
+    border: 10px solid #41644A;
+}
+
+button:hover,
+button:active {
+    background-color: #263A29;
+    border-color: #263A29;
+}
+
+.product_style {
+    margin-bottom: 1rem;
+}
+
+.product_style input {
+    font: inherit;
+    padding: 0.25rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+    width: 30rem;
+
+}
+
+.product_style input:focus {
+    border-color: #1f0050;
+    background-color: #F2E3DB;
+    outline: none;
+}
+
+.product_style label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #E86A33
+}
+
+.errors input {
+    border-color: #aa1754;
+    background-color: #f4eeff;
+}
+
+.errors label{
+ color: #aaff54;
+}

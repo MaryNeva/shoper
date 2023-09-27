@@ -4,22 +4,19 @@
 {% block title %} Product {% endblock %}
 
 {% block content %}
-{%  for object in objects %}
+    {%  for object in objects %}
+    <h2>{{ object.name }}</h2>
+    <form action="/" method="get">
 
-
-<h2>{{ object.name }}</h2>
-
-<form>
-    <br>
-    <p><label>Count -  {{ object.counting }}</label></p>
-    <br>
-    Unit - <input type="checkbox" name="Counting">{{ object.name_unit }}
-    <br>
-    <textarea> Comment - {{ object.comment }} </textarea>
-</form>
-
-
-
-{% endfor %}
+        {% for field in product_form %}
+          <div class="product_style">
+                {{ field.label_tag }}
+                {{ field.errors }}
+                {{ field }}
+          </div>
+        {% endfor %}
+        <button>YES</button>
+    </form>
+    {% endfor %}
 
 {% endblock %}

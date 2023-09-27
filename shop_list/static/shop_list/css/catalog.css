@@ -1,0 +1,58 @@
+/* стиль для заголовка */
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center; /* способ выравнивания по горизонтали - текст отцентровали*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* стиль для блока со списком */
+.section {
+    outline-width: 3px;  /* ширина линии окантовки */
+    -webkit-column-count: 3;  /* желаемое количество колонок текста браузеры Chrome и Safari */
+    -moz-column-count: 3; /* желаемое количество колонок текста браузер Firefox*/
+    column-count: 4; /* колличество колонок */
+    list-style-type: none;  /* тип маркера элемента списка */
+    width: 100%;  /* ширина элемента */
+    max-width: 80%;  /*  */
+    height: 95%;  /*  */
+    border-radius: 10px;  /*  */
+    margin: auto;  /* размер отступов блока */
+    padding: 1px;  /* ширина отступов */
+    min-height: 80%;  /* минимальная высота блока */
+    z-index: 1;
+}
+
+
+/* стиль для каждого элемента в списке */
+.section li {
+    background-color: #e0dcda;
+    border: 4px double #666463;
+    outline-width: 4px;
+    text-align: center;
+    width: 100%;
+    font-size: 100%; /* Размер шрифта */
+    font-weigh: 700; /* насыщенность шрифта 700 - жирный */
+    padding: 3rem 0rem;
+    border-radius: 10px;
+    opacity: 0.7;
+    filter: alpha(Opacity=70);
+    font-family: 'Outfit', sans-serif; /* Название шрифта */
+    color: #000000;
+    z-index: 1;
+}
+
+/* стиль для каждого элемента в списке при наведении курсора */
+.section li:hover  {
+    border: 3px solid #f26522;
+    opacity: 1;
+    transform: scale(0.9);
+    }
+
+/* стиль для каждой надписи элемента в списке */
+.section li a {
+    color: #000000;
+    text-decoration: none;
+    font-stretch: 50%;
+    }

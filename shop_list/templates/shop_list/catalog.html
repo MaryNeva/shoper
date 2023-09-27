@@ -1,15 +1,17 @@
-
-{% extends 'shop_list/base.html' %}
-
+{% extends 'shop_list/base.html' %} <!-- Ссылаемся еа базовый html файл -->
+{% load static %} <!-- Подключаем стили в css -->
+{% block css_additional %}  <!-- Указываем в каком именно css файле хрпнится нужный стиль -->
+    <link rel="stylesheet" href="{% static 'shop_list/css/catalog.css' %}">
+{% endblock %}
 
 {% block title %} Catalog! {% endblock %}
 
 {% block content %}
-    <h2> Catalog </h2>
-    <ul>
+    <h1> CATALOG </h1>
+    <ul class="section">
         {% for section in sections %}
         <li>
-          <a href="{{ section.slug }}/{{ catalog_section.get_section_url }}">{{ section }}</a>
+          <a href="{{ section.slug }}/{{ catalog_section.get_section_url }}">{{ section|upper }}</a>
          </li>
         {% endfor %}
     </ul>
