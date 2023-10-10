@@ -10,6 +10,10 @@ class Catalog_section(models.Model):
     slug = models.SlugField(default='', null=False, db_index=True)
     name_ru = models.CharField(max_length=50, blank=True, null=True)
 
+   # class Meta:
+   #     ordering = ('name_section',)
+   #     verbose_name = 'Категория'
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name_section)
         super(Catalog_section, self).save(*args, **kwargs)
@@ -43,6 +47,9 @@ class Product(models.Model):
     slug = models.SlugField(default='', null=False)
     name_ru = models.CharField(max_length=50, blank=True, null=True)
 
+    class Meta:
+        ordering = ('name', 'counting', 'name_unit',)
+
     def __str__(self):
         return f'{self.name}'
 
@@ -54,6 +61,11 @@ class Product(models.Model):
         return reverse('section-detail/product-detail', args=[self.slug, Catalog_section.slug])
 
 
-
+class Login(models.Model):
+    name = models.CharField(max_length=15)
+    surname = models.CharField(max_length=15)
+    nickname = models.CharField(max_length=15)
+    email = models.CharField(max_length=40)
+    password = models.CharField(max_length=40)
 
 

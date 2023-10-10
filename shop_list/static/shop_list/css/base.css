@@ -1,10 +1,10 @@
 html {
-    background-color: #000000;
+    background-color: white;
 }
 
 body {
-    background-image: url('../img/5.jpg'); /* Фоновое изображение [<image> | none | inherit] */
-    background-color: #c7b39b; /* определяет фоновый цвет элемента */
+    background-image: url('../img/2.jpg'); /* Фоновое изображение [<image> | none | inherit] */
+    background-color: #ffffff; /* определяет фоновый цвет элемента */
     background-size: contain;
     background-attachment: scroll; /* Поведение фонового изображения при прокрутке [scroll | fixed | local] */
     background-position: center;

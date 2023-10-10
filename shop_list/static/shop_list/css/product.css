@@ -1,34 +1,6 @@
-body {
-    margin: 0;
-    font-family: Sans-Serif;
-    background:
-            url('../img/5.jpg') center no-repeat;
-            linear-gradient(#F2E3DB, #000) fixed;
-    background-blend-mode: normal;
-    background-size: 100%;
-
-   /* background-image: url('../img/5.jpg');
-    background-repeat:  no-repeat;
-    background-position: 100%;
-    background-size: 100%;
-    background-color: black; */
-
-}
-
-h1{
-    width:50%;
-    margin: 20px auto 5px;
-    text-align: center;
-    padding: 5px;
-    border-radius: 3px;
-    box-shadow: 0 2px 8px #41644A;
-    color: white;
-    background-color: black;
-}
-
 form {
 
-    width: 50%;
+    width: 90%;
     margin: 20px auto;
     max-width: 50%;
     padding: 1rem;
@@ -51,27 +23,27 @@ button:active {
     border-color: #263A29;
 }
 
-.login_style {
+.product_style {
     margin-bottom: 1rem;
 }
 
-.login_style input {
+.product_style input {
     font: inherit;
     padding: 0.25rem;
     border-radius: 3px;
     border: 1px solid #ccc;
     display: block;
-    width: 30rem;
+    width: 90%;
 
 }
 
-.login_style input:focus {
+.product_style input:focus {
     border-color: #1f0050;
     background-color: #F2E3DB;
     outline: none;
 }
 
-.login_style label {
+.product_style label {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
@@ -91,4 +63,16 @@ button:active {
 
 .errors label{
  color: #aaff54;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    background-color: white;
 }
